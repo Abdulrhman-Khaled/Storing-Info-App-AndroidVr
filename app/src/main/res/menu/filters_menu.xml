@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_info"
+        android:icon="@drawable/ic_info"
+        android:title="Info"
+        android:onClick="infoFun"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_sort"
+        android:icon="@drawable/ic_sort"
+        android:onClick="sortFun"
+        android:title="Sort"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item_search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+
+</menu>
