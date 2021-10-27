@@ -18,7 +18,7 @@
 
 # App Sections
 ### 1- Home Page
-**In This activity you can Add an new person by clicking on add new person button check an see all the persons that entered and stored in the Database and you van search for any person and sort all the persons in asc or desc way.**
+**In This activity you can Add an new person by clicking on add new person button check and see all the persons that entered and stored in the Database and you can search for any person and sort all the persons in asc or desc way.**
 
 ### 2- Add Person
 **In Home page you can click on add new person to open Add Person activity and then you can add person Name, National ID, ID Card Photo.**
