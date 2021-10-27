@@ -5,12 +5,12 @@
 ### Programming Languages :
 - OOP (Object Orinted Programming) with Java.
 - XML (eXtensible Markup Language).
-- SQLite DataBase
+- SQLite DataBase.
 
 ### IDEs :
 - AS (Android Studio) IDE.
 - NetBeans IDE.
-- SQLite DB Browser
+- SQLite DB Browser.
 
 ### Logo and Icons :
 - Adobe Photoshop 2021.
@@ -24,7 +24,7 @@
 **In Home page you can click on add new person to open Add Person activity and then you can add person Name, National ID, ID Card Photo.**
 
 ### 2- Edit Person
-**In Home page you can click on any person to open Edit Person activity and then you can Edit person Name, National ID, ID Card Photo or you can delete the person**
+**In Home page you can click on any person to open Edit Person activity and then you can Edit person Name, National ID, ID Card Photo or you can delete the person.**
 
 # App Photos
 ![photo_2021-10-27_19-02-34](https://user-images.githubusercontent.com/58918060/139112640-cc01380f-7878-46af-bcfd-6e86801c3be1.jpg)
