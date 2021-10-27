@@ -6,16 +6,16 @@
 - OOP (Object Orinted Programming) with Java.
 - XML (eXtensible Markup Language).
 - SQLite DataBase
-- 
+
 ### IDEs :
 - AS (Android Studio) IDE.
 - NetBeans IDE.
 - SQLite DB Browser
-- 
+
 ### Logo and Icons :
 - Adobe Photoshop 2021.
 - Adobe XD (ux/ui) 2021.
-- 
+
 # App Sections
 ### 1- Home Page
 **In This activity you can Add an new person by clicking on add new person button check an see all the persons that entered and stored in the Database and you van search for any person and sort all the persons in asc or desc way.**
