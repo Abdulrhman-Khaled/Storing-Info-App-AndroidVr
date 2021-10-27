@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:cursorVisible="true"
         android:ems="10"
+        android:digits="غظضذخثتشرقصجفعسنملةىكيطئءؤحزوهدباabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
         android:hint="Enter Person Name"
         android:inputType="textPersonName"
         android:padding="10dp"

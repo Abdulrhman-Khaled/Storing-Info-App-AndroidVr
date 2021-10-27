@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.my.SQLite"
+        applicationId "com.bodykh.Milestone1"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1

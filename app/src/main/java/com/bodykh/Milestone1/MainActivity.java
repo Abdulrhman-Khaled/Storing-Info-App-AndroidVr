@@ -1,4 +1,4 @@
-package com.my.SQLite;
+package com.bodykh.Milestone1;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -87,12 +87,12 @@ public class MainActivity extends AppCompatActivity {
                 ArrayList<Contact> filterList = new ArrayList<>();
                 ArrayList<Contact> contacts = db.getAllContacts();
                 for (Contact temp : contacts) {
-                    if (temp.getName().toLowerCase().startsWith(newText.toLowerCase())) {
+                    if (temp.getName().toLowerCase().contains(newText.toLowerCase())) {
                         filterList.add(temp);
                     } else {
                         long phone = temp.getPhone();
                         String phones = Long.toString(phone);
-                        if (phones.toLowerCase().startsWith(newText.toLowerCase())) {
+                        if (phones.toLowerCase().contains(newText.toLowerCase())) {
                             filterList.add(temp);
                         }
                     }

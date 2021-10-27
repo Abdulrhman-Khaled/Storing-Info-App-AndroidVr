@@ -1,17 +1,13 @@
-package com.my.SQLite;
+package com.bodykh.Milestone1;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,41 +17,29 @@ import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
-public class UpdateContact extends AppCompatActivity {
-
-    DbContact db;
+public class AddContact extends AppCompatActivity {
 
     EditText editName, editPhone;
-    Button btnUpdate;
+    Button btnConfirm;
     ImageButton pickImag;
-
     byte[] image = null;
-    int id;
+    DbContact db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_contact);
+        setContentView(R.layout.activity_add_contact);
 
-        id = getIntent().getIntExtra("id", 0);
         db = new DbContact(this);
-        Contact contact = db.getContactById2(id);
 
 
         editName = (EditText) findViewById(R.id.editName);
         editPhone = (EditText) findViewById(R.id.editPhone);
+        btnConfirm = (Button) findViewById(R.id.btnConfirm);
         pickImag = (ImageButton) findViewById(R.id.pickImg);
-        btnUpdate = (Button) findViewById(R.id.btnUpdate);
-
-        editName.setText(contact.getName());
-        editPhone.setText(contact.getPhone() + "");
-
-        Bitmap bitmap = BitmapFactory.decodeByteArray(contact.getImage(), 0, contact.getImage().length);
-        pickImag.setImageBitmap(bitmap);
-        image = getBytes(bitmap);
 
 
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -66,65 +50,21 @@ public class UpdateContact extends AppCompatActivity {
                     editPhone.setError("this field can't be empty and must contain 14 number");
                     return;
                 } else if (editName.getText().toString().trim().length() > 0 && editPhone.getText().toString().trim().length() > 0) {
-                    String name = editName.getText().toString();
-                    long phone = Long.parseLong(editPhone.getText().toString());
                     BitmapDrawable drawable = (BitmapDrawable) pickImag.getDrawable();
                     Bitmap bitmap = drawable.getBitmap();
                     image = getBytes(bitmap);
-                    Contact newContact = new Contact(id, name, phone, image);
-                    db.updateContact(newContact);
-                    Toast.makeText(UpdateContact.this, "Person is updated !", Toast.LENGTH_SHORT).show();
+                    String name = editName.getText().toString();
+                    long id = Long.parseLong(editPhone.getText().toString());
+                    Contact contact = new Contact(name, id, image);
+                    db.addContact(contact);
+                    Toast.makeText(AddContact.this, "Person is added !", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }
         });
 
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.delete_menu, menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.item_delet:
-                showAlert();
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    private void showAlert() {
-
-        AlertDialog.Builder alertBilder = new AlertDialog.Builder(this);
-        alertBilder.setTitle("Confirmation")
-                .setMessage("Are you sure that you want to delete this person?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        db.deletContact(id);
-                        Toast.makeText(UpdateContact.this, "Person is deleted !", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        AlertDialog dialog = alertBilder.create();
-        dialog.show();
-    }
 
     public void openGalleries(View view) {
 
@@ -161,5 +101,6 @@ public class UpdateContact extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
         return stream.toByteArray();
     }
+
 
 }

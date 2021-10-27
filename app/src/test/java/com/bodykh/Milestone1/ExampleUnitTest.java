@@ -1,4 +1,4 @@
-package com.my.SQLite;
+package com.bodykh.Milestone1;
 
 import org.junit.Test;
 

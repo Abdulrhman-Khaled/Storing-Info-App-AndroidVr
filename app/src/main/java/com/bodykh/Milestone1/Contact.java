@@ -1,4 +1,4 @@
-package com.my.SQLite;
+package com.bodykh.Milestone1;
 
 public class Contact implements Comparable<Contact> {
 
